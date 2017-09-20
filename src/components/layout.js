@@ -13,11 +13,24 @@ class Application extends React.Component {
         }
     }
 
+    onScoreChanged(index, delta) {
+        const players = this.state.players.slice();
+        players[index].score += delta;
+        this.setState({
+            players: players
+        });
+    }
+
     render() {
         return (
             <div className="scoreboard">
                 <Header title={this.props.title}/>
-                {this.state.players.map(player => <Player key={player.id} {...player}/>)}
+                {this.state.players.map((player, index) =>
+                    <Player
+                        key={player.id}
+                        {...player}
+                        onScoreChanged={(delta) => this.onScoreChanged(index, delta)}
+                    />)}
             </div>
         )
     }

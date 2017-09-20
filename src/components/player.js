@@ -8,13 +8,14 @@ const Player = props => (
             <div className="player-name">
                 {props.name}
             </div>
-            <Counter score={props.score}/>
+            <Counter score={props.score} onChange={props.onScoreChanged}/>
         </div>
     </div>
 );
 
 Player.propTypes = {
     name: PropTypes.string.isRequired,
+    onScoreChanged: PropTypes.func.isRequired,
 };
 
 
