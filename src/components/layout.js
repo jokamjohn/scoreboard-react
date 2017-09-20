@@ -24,12 +24,21 @@ class Application extends React.Component {
 
     onAddPlayer(name) {
         const playersArrayLength = this.state.players.length;
-        const newId = (this.state.players[playersArrayLength - 1].id) + 1;
+        const newId = playersArrayLength ? (this.state.players[playersArrayLength - 1].id) + 1 : 1;
         const newPlayer = {id: newId, name: name, score: 0};
         const players = this.state.players.concat(newPlayer);
         this.setState({
             players: players
         })
+    }
+
+    onDeletePlayer(index) {
+        const players = this.state.players.slice();
+        players.splice(index, 1);
+        this.setState({
+            players: players
+        })
+
     }
 
     render() {
@@ -41,6 +50,7 @@ class Application extends React.Component {
                         key={player.id}
                         {...player}
                         onScoreChanged={(delta) => this.onScoreChanged(index, delta)}
+                        onRemove={() => this.onDeletePlayer(index)}
                     />)}
                 <AddPlayerForm onAddPlayer={(name) => this.onAddPlayer(name)}/>
             </div>

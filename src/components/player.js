@@ -6,6 +6,7 @@ const Player = props => (
     <div className="players">
         <div className="player">
             <div className="player-name">
+                <a className="remove-player" onClick={props.onRemove}>x</a>
                 {props.name}
             </div>
             <Counter score={props.score} onChange={props.onScoreChanged}/>
@@ -16,6 +17,7 @@ const Player = props => (
 Player.propTypes = {
     name: PropTypes.string.isRequired,
     onScoreChanged: PropTypes.func.isRequired,
+    onRemove: PropTypes.func.isRequired
 };
 
 
