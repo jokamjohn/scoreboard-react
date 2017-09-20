@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import '../css/styles.css';
 import Header from "./header";
 import Player from "./player";
+import AddPlayerForm from "./addPlayer";
 
 class Application extends React.Component {
 
@@ -21,6 +22,10 @@ class Application extends React.Component {
         });
     }
 
+    onAddPlayer(name) {
+        console.log(name)
+    }
+
     render() {
         return (
             <div className="scoreboard">
@@ -31,6 +36,7 @@ class Application extends React.Component {
                         {...player}
                         onScoreChanged={(delta) => this.onScoreChanged(index, delta)}
                     />)}
+                <AddPlayerForm onAddPlayer={(name) => this.onAddPlayer(name)}/>
             </div>
         )
     }
