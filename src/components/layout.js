@@ -23,7 +23,13 @@ class Application extends React.Component {
     }
 
     onAddPlayer(name) {
-        console.log(name)
+        const playersArrayLength = this.state.players.length;
+        const newId = (this.state.players[playersArrayLength - 1].id) + 1;
+        const newPlayer = {id: newId, name: name, score: 0};
+        const players = this.state.players.concat(newPlayer);
+        this.setState({
+            players: players
+        })
     }
 
     render() {

@@ -30,7 +30,7 @@ class AddPlayerForm extends React.Component {
             <div className="add-player-form" onSubmit={(event) => this.onSubmit(event)}>
                 <form>
                     <input type="text" value={this.state.name} onChange={(event) => this.onChangeName(event)}/>
-                    <input type="submit"/>
+                    <input type="submit" value="Add Player"/>
                 </form>
             </div>
         )
