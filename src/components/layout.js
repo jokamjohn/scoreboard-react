@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import '../css/styles.css';
 import Header from "./header";
 import Player from "./player";
@@ -10,6 +11,14 @@ const Application = props => (
         <Player name="Cecilia Caroline" score={20}/>
     </div>
 );
+
+Application.propTypes = {
+    title: PropTypes.string
+};
+
+Application.defaultProps = {
+    title: "Scoreboard"
+};
 
 
 export default Application
