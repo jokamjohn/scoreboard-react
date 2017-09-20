@@ -1,10 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import '../css/styles.css';
 
-const Application = () => (
+const Application = props => (
     <div className="scoreboard">
         <div className="header">
-            <h1>Scoreboard</h1>
+            <h1>{props.title}</h1>
         </div>
 
         <div className="players">
@@ -37,5 +38,13 @@ const Application = () => (
         </div>
     </div>
 );
+
+Application.propTypes = {
+  title: PropTypes.string
+};
+
+Application.defaultProps = {
+  title: "Scoreboard"
+};
 
 export default Application
