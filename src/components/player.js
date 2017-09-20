@@ -8,7 +8,7 @@ const Player = props => (
             <div className="player-name">
                 {props.name}
             </div>
-            <Counter score={props.score}/>
+            <Counter/>
         </div>
     </div>
 );
