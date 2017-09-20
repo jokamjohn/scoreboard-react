@@ -1,12 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import '../css/styles.css';
+import Header from "./header";
 
 const Application = props => (
     <div className="scoreboard">
-        <div className="header">
-            <h1>{props.title}</h1>
-        </div>
+        <Header title={props.title}/>
 
         <div className="players">
             <div className="player">
@@ -15,9 +13,9 @@ const Application = props => (
                 </div>
                 <div className="player-score">
                     <div className="counter">
-                        <button className="counter-action decrement"> - </button>
+                        <button className="counter-action decrement"> -</button>
                         <div className="counter-score">32</div>
-                        <button className="counter-action increment"> + </button>
+                        <button className="counter-action increment"> +</button>
                     </div>
                 </div>
             </div>
@@ -28,9 +26,9 @@ const Application = props => (
                 </div>
                 <div className="player-score">
                     <div className="counter">
-                        <button className="counter-action decrement"> - </button>
+                        <button className="counter-action decrement"> -</button>
                         <div className="counter-score">20</div>
-                        <button className="counter-action increment"> + </button>
+                        <button className="counter-action increment"> +</button>
                     </div>
                 </div>
             </div>
@@ -39,12 +37,6 @@ const Application = props => (
     </div>
 );
 
-Application.propTypes = {
-  title: PropTypes.string
-};
 
-Application.defaultProps = {
-  title: "Scoreboard"
-};
 
 export default Application
