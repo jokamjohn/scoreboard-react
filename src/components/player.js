@@ -15,7 +15,6 @@ const Player = props => (
 
 Player.propTypes = {
     name: PropTypes.string.isRequired,
-    score: PropTypes.number.isRequired,
 };
 
 
