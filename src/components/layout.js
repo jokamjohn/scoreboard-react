@@ -7,13 +7,17 @@ import Player from "./player";
 const Application = props => (
     <div className="scoreboard">
         <Header title={props.title}/>
-        <Player name="John Kagga" score={32}/>
-        <Player name="Cecilia Caroline" score={20}/>
+        {props.players.map(player => <Player key={player.id} {...player}/>)}
     </div>
 );
 
 Application.propTypes = {
-    title: PropTypes.string
+    title: PropTypes.string,
+    players: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        name: PropTypes.string.isRequired,
+        score: PropTypes.number.isRequired
+    })).isRequired
 };
 
 Application.defaultProps = {
