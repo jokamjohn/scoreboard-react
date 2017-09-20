@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import Counter from "./counter";
 
 const Player = props => (
     <div className="players">
@@ -6,15 +8,15 @@ const Player = props => (
             <div className="player-name">
                 {props.name}
             </div>
-            <div className="player-score">
-                <div className="counter">
-                    <button className="counter-action decrement"> -</button>
-                    <div className="counter-score">{props.score}</div>
-                    <button className="counter-action increment"> +</button>
-                </div>
-            </div>
+            <Counter score={props.score}/>
         </div>
     </div>
 );
+
+Player.propTypes = {
+    name: PropTypes.string.isRequired,
+    score: PropTypes.number.isRequired,
+};
+
 
 export default Player
