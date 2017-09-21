@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {connect} from "react-redux";
 import '../css/styles.css';
 import Header from "../components/Header";
 import Player from "../components/Player";
@@ -71,5 +72,10 @@ class Scoreboard extends React.Component {
     }
 }
 
+const mapStateToProps = state => (
+    {
+        players: state
+    }
+);
 
-export default Scoreboard
+export default connect(mapStateToProps)(Scoreboard)
