@@ -6,7 +6,8 @@ import {createStore} from 'redux';
 import Scoreboard from './containers/Scoreboard';
 
 const store = createStore(
-    PlayerReducer
+    PlayerReducer,
+    window.devToolsExtension && window.devToolsExtension()
 );
 
 ReactDOM.render(
