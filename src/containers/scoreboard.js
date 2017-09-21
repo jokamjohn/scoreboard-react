@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import '../css/styles.css';
 import Header from "../components/header";
 import Player from "../components/player";
-import AddPlayerForm from "../components/addPlayer";
+import AddPlayerForm from "../components/AddPlayerForm";
 
 class Scoreboard extends React.Component {
 

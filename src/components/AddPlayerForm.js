@@ -10,26 +10,30 @@ class AddPlayerForm extends React.Component {
         }
     }
 
-    onSubmit(event) {
+    static propTypes = {
+        onAddPlayer: PropTypes.func.isRequired,
+    };
+
+    onSubmit = (event) => {
         event.preventDefault();
         this.props.onAddPlayer(this.state.name);
         this.setState({
             name: ""
         })
-    }
+    };
 
-    onChangeName(event) {
+    onChangeName = (event) => {
         const name = event.target.value;
         this.setState({
             name: name
         });
-    }
+    };
 
     render() {
         return (
-            <div className="add-player-form" onSubmit={(event) => this.onSubmit(event)}>
+            <div className="add-player-form" onSubmit={this.onSubmit}>
                 <form>
-                    <input type="text" value={this.state.name} onChange={(event) => this.onChangeName(event)}/>
+                    <input type="text" value={this.state.name} onChange={this.onChangeName}/>
                     <input type="submit" value="Add Player"/>
                 </form>
             </div>
@@ -37,8 +41,5 @@ class AddPlayerForm extends React.Component {
     }
 }
 
-AddPlayerForm.propTypes = {
-    onAddPlayer: PropTypes.func.isRequired,
-};
 
 export default AddPlayerForm

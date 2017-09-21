@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Stats from "./stats";
-import StopWatch from "./stopwatch";
+import StopWatch from "./Stopwatch";
 
 function Header(props) {
     return (
