@@ -14,15 +14,28 @@ class Scoreboard extends React.Component {
         }
     }
 
-    onScoreChanged(index, delta) {
+    static propTypes = {
+        title: PropTypes.string,
+        initialPlayers: PropTypes.arrayOf(PropTypes.shape({
+            id: PropTypes.number.isRequired,
+            name: PropTypes.string.isRequired,
+            score: PropTypes.number.isRequired
+        })).isRequired
+    };
+
+    static defaultProps = {
+        title: "Scoreboard"
+    };
+
+    onScoreChanged = (index, delta) => {
         const players = this.state.players.slice();
         players[index].score += delta;
         this.setState({
             players: players
         });
-    }
+    };
 
-    onAddPlayer(name) {
+    onAddPlayer = (name) => {
         const playersArrayLength = this.state.players.length;
         const newId = playersArrayLength ? (this.state.players[playersArrayLength - 1].id) + 1 : 1;
         const newPlayer = {id: newId, name: name, score: 0};
@@ -30,16 +43,16 @@ class Scoreboard extends React.Component {
         this.setState({
             players: players
         })
-    }
+    };
 
-    onDeletePlayer(index) {
+    onDeletePlayer = (index) => {
         const players = this.state.players.slice();
         players.splice(index, 1);
         this.setState({
             players: players
         })
 
-    }
+    };
 
     render() {
         return (
@@ -57,20 +70,6 @@ class Scoreboard extends React.Component {
         )
     }
 }
-
-
-Scoreboard.propTypes = {
-    title: PropTypes.string,
-    initialPlayers: PropTypes.arrayOf(PropTypes.shape({
-        id: PropTypes.number.isRequired,
-        name: PropTypes.string.isRequired,
-        score: PropTypes.number.isRequired
-    })).isRequired
-};
-
-Scoreboard.defaultProps = {
-    title: "Scoreboard"
-};
 
 
 export default Scoreboard
