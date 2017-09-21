@@ -5,7 +5,7 @@ import Header from "./header";
 import Player from "./player";
 import AddPlayerForm from "./addPlayer";
 
-class Application extends React.Component {
+class Scoreboard extends React.Component {
 
     constructor(props) {
         super(props);
@@ -59,7 +59,7 @@ class Application extends React.Component {
 }
 
 
-Application.propTypes = {
+Scoreboard.propTypes = {
     title: PropTypes.string,
     initialPlayers: PropTypes.arrayOf(PropTypes.shape({
         id: PropTypes.number.isRequired,
@@ -68,9 +68,9 @@ Application.propTypes = {
     })).isRequired
 };
 
-Application.defaultProps = {
+Scoreboard.defaultProps = {
     title: "Scoreboard"
 };
 
 
-export default Application
+export default Scoreboard
