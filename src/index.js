@@ -4,7 +4,6 @@ import {Provider} from 'react-redux';
 import PlayerReducer from './reducers/player'
 import {createStore} from 'redux';
 import Scoreboard from './containers/Scoreboard';
-import PLAYERS from "./data/Players";
 
 const store = createStore(
     PlayerReducer
@@ -12,6 +11,6 @@ const store = createStore(
 
 ReactDOM.render(
     <Provider store={store}>
-        <Scoreboard initialPlayers={PLAYERS}/>
+        <Scoreboard/>
     </Provider>,
     document.getElementById('root'));

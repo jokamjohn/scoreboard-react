@@ -22,10 +22,12 @@ export default function (state = initialState, action) {
 
     switch (action.type) {
         case PlayerActionTypes.ADD_PLAYER:
+            const playersArrayLength = state.length;
+            const playerId = playersArrayLength ? (state[playersArrayLength - 1].id) + 1 : 1;
             return [
                 ...state,
                 {
-                    id: action.id,
+                    id: playerId,
                     name: action.name,
                     score: 0
                 }

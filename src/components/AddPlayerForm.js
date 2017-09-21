@@ -11,12 +11,12 @@ class AddPlayerForm extends React.Component {
     }
 
     static propTypes = {
-        onAddPlayer: PropTypes.func.isRequired,
+        addPlayer: PropTypes.func.isRequired,
     };
 
-    onSubmit = (event) => {
+    addPlayer = (event) => {
         event.preventDefault();
-        this.props.onAddPlayer(this.state.name);
+        this.props.addPlayer(this.state.name);
         this.setState({
             name: ""
         })
@@ -31,7 +31,7 @@ class AddPlayerForm extends React.Component {
 
     render() {
         return (
-            <div className="add-player-form" onSubmit={this.onSubmit}>
+            <div className="add-player-form" onSubmit={this.addPlayer}>
                 <form>
                     <input type="text" value={this.state.name} onChange={this.onChangeName}/>
                     <input type="submit" value="Add Player"/>
