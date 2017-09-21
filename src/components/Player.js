@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Counter from "./counter";
+import Counter from "./Counter";
 
 const Player = props => (
     <div className="players">

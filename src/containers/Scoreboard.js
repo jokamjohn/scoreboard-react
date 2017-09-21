@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import '../css/styles.css';
-import Header from "../components/header";
-import Player from "../components/player";
+import Header from "../components/Header";
+import Player from "../components/Player";
 import AddPlayerForm from "../components/AddPlayerForm";
 
 class Scoreboard extends React.Component {
